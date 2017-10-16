@@ -1,0 +1,33 @@
+{
+    "name": "sujun/payment",
+    "type": "library",
+    "description": "php支付 SDK",
+    "keywords": ["alipay"],
+    "homepage": "https://github.com/351699382",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tianlanjusi",
+            "email": "351699382@qq.com",
+            "homepage": "https://github.com/351699382"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "ext-bcmath": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "6.3.0"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": {"Payment\\": "src/Payment"}
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
