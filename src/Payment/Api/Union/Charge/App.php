@@ -179,11 +179,13 @@ class App extends ChargeAbstract
             $options = [
                 'query'       => $data,
                 'http_errors' => false,
+                'verify'      => false,
             ];
         } elseif ($method === 'POST') {
             $options = [
                 'form_params' => $data,
                 'http_errors' => false,
+                'verify'      => false,
             ];
         }
         // 发起网络请求

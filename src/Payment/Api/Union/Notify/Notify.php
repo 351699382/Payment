@@ -142,7 +142,7 @@ $arrData = ArrayUtil::paraFilter($arrData);*/
                 $isSuccess = false;
             }
         } else {
-            $isSuccess = $this->validateBySecureKey($params, SDKConfig::getSDKConfig()->secureKey);
+            $isSuccess = $this->validateBySecureKey($params, $this->config['secure_key']);
         }
         return $isSuccess;
     }
