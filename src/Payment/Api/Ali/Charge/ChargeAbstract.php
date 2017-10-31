@@ -13,6 +13,7 @@ use Payment\PayException;
 use Payment\Utils\Rsa2Encrypt;
 use Payment\Utils\RsaEncrypt;
 use Payment\Utils\StrUtil;
+use Payment\Utils\ArrayUtil;
 
 abstract class ChargeAbstract
 {
