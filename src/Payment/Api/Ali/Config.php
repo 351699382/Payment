@@ -66,7 +66,7 @@ final class Config extends ConfigAbstract
         if (key_exists('app_id', $config) && is_numeric($config['app_id'])) {
             $this->appId = $config['app_id'];
         } else {
-            throw new PayException('支付宝应用ID错误，请检查');
+            throw new PayException('支付宝应用ID错误，请检查' . print_r($config, 1));
         }
 
         // 初始 支付宝异步通知地址，可为空

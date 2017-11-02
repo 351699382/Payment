@@ -211,10 +211,10 @@ class Notify
 
         if ($signType === 'RSA') {
             // 使用rsa方式
-            $rsa = new RsaEncrypt($this->config['ali_public_key']);
+            $rsa = new RsaEncrypt($this->config->rsaAliPubKey);
             return $rsa->rsaVerify($preStr, $sign);
         } elseif ($signType === 'RSA2') {
-            $rsa = new Rsa2Encrypt($this->config['ali_public_key']);
+            $rsa = new Rsa2Encrypt($this->config->rsaAliPubKey);
             return $rsa->rsaVerify($preStr, $sign);
         } else {
             return false;
