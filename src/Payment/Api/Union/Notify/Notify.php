@@ -84,20 +84,14 @@ $arrData = ArrayUtil::paraFilter($arrData);*/
      */
     public function checkNotifyData(array $data)
     {
-
-        if ($data["respCode"] == "03"
-            || $data["respCode"] == "04"
-            || $data["respCode"] == "05") {
+        if ($data["respCode"] == "00" || $data["respCode"] == "A6") {
             //后续需发起交易状态查询交易确定交易状态
             //TODO
-
+            // 检查返回数据签名是否正确
+            return $this->verifySign($data);
         } else {
-            //return false;
+            return false;
         }
-
-        // 检查返回数据签名是否正确
-        return $this->verifySign($data);
-
     }
 
     /**
