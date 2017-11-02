@@ -106,4 +106,27 @@ class Payment
         return $obj->handle();
     }
 
+    /**
+     * 回复通知
+     * [notify description]
+     * @return [type] [description]
+     */
+    public function replyNotify($channel, $flag)
+    {
+        switch ($channel) {
+            case Config::ALI_CHARGE:
+                $obj = new \Payment\Api\Ali\Notify\Notify([]);
+                break;
+            case Config::WX_CHARGE:
+                $obj = new \Payment\Api\Wx\Notify\Notify([]);
+                break;
+            case Config::UNION_CHARGE:
+                $obj = new \Payment\Api\Union\Notify\Notify([]);
+                break;
+            default:
+                throw new \Exception('当前不支持' . $channel);
+        }
+        return $obj->replyNotify($flag);
+    }
+
 }

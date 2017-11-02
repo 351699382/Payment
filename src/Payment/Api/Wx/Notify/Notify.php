@@ -14,7 +14,7 @@ use Payment\PayException;
 use Payment\Utils\ArrayUtil;
 use Payment\Utils\DataParser;
 
-class Notify extends NotifyStrategy
+class Notify
 {
 
     /**
@@ -169,7 +169,7 @@ class Notify extends NotifyStrategy
      * @param string $msg 通知信息，错误原因
      * @return string
      */
-    protected function replyNotify($flag, $msg = 'OK')
+    public function replyNotify($flag, $msg = 'OK')
     {
         // 默认为成功
         $result = [

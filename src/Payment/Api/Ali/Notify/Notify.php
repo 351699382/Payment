@@ -167,7 +167,7 @@ class Notify
      * @param string $msg 错误原因  后期考虑记录日志
      * @return string
      */
-    protected function replyNotify($flag, $msg = '')
+    public function replyNotify($flag, $msg = '')
     {
         if ($flag) {
             return 'success';

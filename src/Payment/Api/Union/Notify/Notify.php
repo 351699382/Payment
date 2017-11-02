@@ -187,7 +187,7 @@ $arrData = ArrayUtil::paraFilter($arrData);*/
      * @param string $msg 通知信息，错误原因
      * @return string
      */
-    protected function replyNotify($flag, $msg = 'OK')
+    public function replyNotify($flag, $msg = 'OK')
     {
         // 默认为成功
         $result = [
