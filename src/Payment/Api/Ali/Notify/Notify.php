@@ -44,14 +44,14 @@ class Notify
         $notifyData = $this->getNotifyData();
         if ($notifyData === false) {
             // 失败，就返回错误
-            return $this->replyNotify(false, '获取通知数据失败');
+            return false;
         }
 
         // 检查异步通知返回的数据是否有误
         $checkRet = $this->checkNotifyData($notifyData);
         if ($checkRet === false) {
             // 失败，就返回错误
-            return $this->replyNotify(false, '返回数据验签失败，可能数据被篡改');
+            return false;
         }
         return $notifyData;
 
