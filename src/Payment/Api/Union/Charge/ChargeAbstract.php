@@ -9,6 +9,8 @@
 namespace Payment\Api\Union\Charge;
 
 use Payment\PayException;
+use Payment\Utils\ArrayUtil;
+use Payment\Utils\CertUtil;
 
 abstract class ChargeAbstract
 {

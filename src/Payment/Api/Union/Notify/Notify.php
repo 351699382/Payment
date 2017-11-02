@@ -200,6 +200,7 @@ $arrData = ArrayUtil::paraFilter($arrData);*/
                 'return_code' => 'FAIL',
                 'return_msg'  => $msg,
             ];
+            header("status: 500 Not Found");
         }
         //header("status: 500 Not Found");
         //状态码为200即表示成功
