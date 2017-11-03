@@ -52,7 +52,7 @@ class Notify
         $checkRet = $this->checkNotifyData($notifyData);
         if ($checkRet === false) {
             // 失败，就返回错误
-            throw new \Exception("验证数据失败", 1);
+            throw new \Exception("返回数据失败", 1);
             return false;
         }
         return $notifyData;
@@ -96,7 +96,7 @@ class Notify
     public function checkNotifyData(array $data)
     {
         //$data['trade_status']
-        $status = $this->getTradeStatus($data);
+        $status = $this->getTradeStatus($data['trade_status']);
         if ($status !== 'success') {
             // 如果不是交易成功状态，直接返回错误，
             return false;
@@ -104,7 +104,9 @@ class Notify
 
         // 检查签名
         $flag = $this->verifySign($data);
-
+        if ($flag == false) {
+            throw new \Exception("签名失败", 1);
+        }
         return $flag;
     }
 
